@@ -1,10 +1,11 @@
 package org.zerock.persistence;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,24 @@ public class DataSourceTests {
 
 	@Autowired
 	private DataSource ds;
-	
-	@Test
+
+	@Autowired
+	private SqlSessionFactory sef;
+
 	public void testConnection() {
-		
-		try(Connection con = ds.getConnection()) {
+
+	}
+
+	@Test
+	public void testConnection2() {
+
+		try (SqlSession session = sef.openSession(); Connection con = session.getConnection()) {
+
+			log.info(session);
 			log.info(con);
-		
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-			log.error(e.getMessage());
 		}
 	}
 }
