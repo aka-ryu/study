@@ -10,6 +10,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.context.WebApplicationContext;
 
 import lombok.Setter;
@@ -63,5 +64,27 @@ public class BoardControllerTests {
 				.param("bno", "2"))
 				.andReturn()
 				.getModelAndView().getModelMap());
+	}
+	
+	@Test
+	public void testModify() throws Exception {
+		
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/modify")
+				.param("bno", "2")
+				.param("title", "수정된 새글 제목")
+				.param("content", "수정된 새글 내용")
+				.param("writer", "수정이")
+				).andReturn().getModelAndView().getViewName();
+		
+		log.info(resultPage);
+	}
+	
+	@Test
+	public void testRemove() throws Exception{
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove")
+				.param("bno", "2")
+				).andReturn().getModelAndView().getViewName();
+		
+		log.info(resultPage);
 	}
 }
