@@ -9,20 +9,41 @@
 			SELECT * FROM tbl_board WHERE bno > 0
 		]]>
 	</select>
-	
+
 	<insert id="insert">
 		INSERT INTO tbl_board (bno, title, content, writer)
 		VALUES (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
 
 	<insert id="insertSelectKey">
-		
-		<selectKey  keyProperty="bno" order="BEFORE" resultType="long">
+
+		<selectKey keyProperty="bno" order="BEFORE"
+			resultType="long">
 			SELECT seq_board.nextval FROM dual
 		</selectKey>
-		
+
 		INSERT INTO tbl_board (bno, title, content, writer)
-		VALUES (#{bno}, #{title}, #{content}, #{writer})
-			
+		VALUES (#{bno},
+		#{title}, #{content}, #{writer})
+
 	</insert>
+
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		SELECT * FROM tbl_board WHERE bno = #{bno}
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM tbl_board WHERE bno = #{bno}
+	</delete>
+	
+	<update id="update">
+		UPDATE tbl_board SET 
+		title = #{title},
+		content = #{content},
+		writer = #{writer},
+		updateDate = sysdate
+		WHERE bno = #{bno}
+		
+	</update>
+
 </mapper>
