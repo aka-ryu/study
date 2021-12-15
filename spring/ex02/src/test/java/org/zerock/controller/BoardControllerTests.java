@@ -10,7 +10,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.context.WebApplicationContext;
 
 import lombok.Setter;
@@ -36,12 +35,12 @@ public class BoardControllerTests {
 	}
 	
 	@Test
-	public void testList() throws Exception{
-		log.info(
-				mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
-				.andReturn()
-				.getModelAndView()
-				.getModelMap());
+	public void testListPaging() throws Exception{
+		log.info(mockMvc.perform(
+				MockMvcRequestBuilders.get("/board/list")
+				.param("pageNum", "2")
+				.param("amount", "50"))
+				.andReturn().getModelAndView().getModelMap());
 	}
 	
 	@Test
@@ -78,7 +77,7 @@ public class BoardControllerTests {
 		
 		log.info(resultPage);
 	}
-	
+	 
 	@Test
 	public void testRemove() throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove")
