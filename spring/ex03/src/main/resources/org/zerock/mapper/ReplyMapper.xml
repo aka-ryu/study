@@ -8,5 +8,23 @@
 		INSERT INTO tbl_reply (rno, bno, reply, replyer)
 		VALUES (seq_reply.nextval, #{bno}, #{reply}, #{replyer})
 	</insert>
+	
+	<select id="read" resultType="org.zerock.domain.ReplyVO">
+		SELECT * FROM tbl_reply WHERE rno = #{rno}
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM tbl_reply WHERE rno = #{rno}
+	</delete>
 
+	<update id="update">
+		UPDATE tbl_reply SET reply = #{reply}, updatedate = SYSDATE WHERE rno = #{rno}
+	</update>
+	
+	<select id="getListWithPaging" resultType="org.zerock.domain.ReplyVO">
+		SELECT rno, bno, reply, replyer, replyDate, updateDate
+		  FROM tbl_reply
+		 WHERE bno = #{bno}
+		ORDER BY rno ASC 
+	</select>
 </mapper>
