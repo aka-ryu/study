@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.ReplyPageDTO;
 import org.zerock.domain.ReplyVO;
+import org.zerock.mapper.BoardMapper;
 import org.zerock.mapper.ReplyMapper;
 
 import lombok.AllArgsConstructor;
@@ -20,6 +23,10 @@ public class ReplyServiceImpl implements ReplyService {
 	@Setter(onMethod_ = @Autowired)
 	private ReplyMapper mapper;
 	
+	@Setter(onMethod_ = @Autowired)
+	private BoardMapper boardMapper;
+	
+	@Transactional
 	@Override
 	public int register(ReplyVO vo) {
 		log.info("register...." + vo);
@@ -38,6 +45,7 @@ public class ReplyServiceImpl implements ReplyService {
 		return mapper.update(vo);
 	}
 	
+	@Transactional
 	@Override
 	public int remove(Long rno) {
 		log.info("remove....." + rno);
@@ -48,5 +56,12 @@ public class ReplyServiceImpl implements ReplyService {
 	public List<ReplyVO> getList(Criteria cri, Long bno) {
 		log.info("get Reply List of a Board " + bno);
 		return mapper.getListWithPaging(cri, bno);
+	}
+	
+	@Override
+	public ReplyPageDTO getListPage(Criteria cri, Long bno) {
+		return new ReplyPageDTO(
+				mapper.getCountByBno(bno),
+				mapper.getListWithPaging(cri, bno));
 	}
 }

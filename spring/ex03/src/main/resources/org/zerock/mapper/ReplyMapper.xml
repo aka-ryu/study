@@ -8,23 +8,43 @@
 		INSERT INTO tbl_reply (rno, bno, reply, replyer)
 		VALUES (seq_reply.nextval, #{bno}, #{reply}, #{replyer})
 	</insert>
-	
+
 	<select id="read" resultType="org.zerock.domain.ReplyVO">
-		SELECT * FROM tbl_reply WHERE rno = #{rno}
+		SELECT * FROM tbl_reply WHERE rno =
+		#{rno}
 	</select>
-	
+
 	<delete id="delete">
 		DELETE FROM tbl_reply WHERE rno = #{rno}
 	</delete>
 
 	<update id="update">
-		UPDATE tbl_reply SET reply = #{reply}, updatedate = SYSDATE WHERE rno = #{rno}
+		UPDATE tbl_reply SET reply = #{reply}, updatedate =
+		SYSDATE WHERE rno = #{rno}
 	</update>
-	
-	<select id="getListWithPaging" resultType="org.zerock.domain.ReplyVO">
-		SELECT rno, bno, reply, replyer, replyDate, updateDate
-		  FROM tbl_reply
-		 WHERE bno = #{bno}
-		ORDER BY rno ASC 
+
+	<select id="getListWithPaging"
+		resultType="org.zerock.domain.ReplyVO">
+
+  <![CDATA[
+ select  rno, bno, reply, replyer, replydate, updatedate
+ from 
+   (
+    select /*+INDEX(tbl_reply idx_reply) */ 
+      rownum rn,  rno, bno, reply, replyer, replyDate, updatedate
+    from tbl_reply
+    where bno =  #{bno}
+    and rno > 0
+    and rownum <= #{cri.pageNum} * #{cri.amount}
+   ) where rn > (#{cri.pageNum} -1) * #{cri.amount}
+]]>
+
+	</select>
+
+
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+		SELECT count(rno) FROM tbl_reply WHERE bno = #{bno}
+		]]>
 	</select>
 </mapper>
