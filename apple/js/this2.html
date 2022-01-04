@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+    
+    <button id="btn">버튼</button>
+
+
+    <script>
+
+        function 기계() {
+            this.name = 'kim'
+        }
+
+        var obj = new 기계();
+
+        
+        document.getElementById('btn').addEventListener('click', 
+        function(e){
+           var array = [1,2,3];
+           array.forEach(function(a){ 
+               console.log(this)
+           });
+        });
+
+
+        var obj2 = {
+            name : ['kim', 'lee', 'park'],
+            function : function() {
+                    console.log(this)
+                obj2.name.forEach(() => {
+                    console.log(this)
+                })
+            }
+        }
+    
+
+        obj2.function();
+    </script>
+
+</body>
+</html>

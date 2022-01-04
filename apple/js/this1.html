@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+
+    <script>
+        'use strict';
+
+        console.log(this)
+
+        function 함수() {
+            console.log(this);
+        }
+
+        함수()
+
+
+
+        var obj = {
+            data : 'kim',
+            function : function(){
+                console.log(this)
+            }
+        }
+
+        obj.function();
+
+
+
+        var obj2 = {
+            data : {
+                function1() {
+                    console.log(this)
+                }
+            }
+        }
+
+        obj2.data.function1();
+    </script>
+
+</body>
+</html>
