@@ -1,0 +1,24 @@
+Package 병렬 설치
+npm 은 여러 package를 설치할 때, 각각의 package가 완전히 설치되고 나서 다음이 설치됩니다. (순차적). Yarn은 병렬로 처리되서 performance와 speed가 증가 됩니다.
+react 를 설치했을 때, npm은 3.5s, Yarn은 1.4s 정도 소요 되었다고 합니다.
+
+자동 Lock file 생성
+npm, yarn 둘 다 package.json에 버전을 명시하고 의존성은 추적 관리하고 있습니다. 
+버전에 ^를 붙이게 되면 package manaager는 새로운 버전이 배포 되었는지 체크합니다. 
+새로운 버전이 있으면 명시된 버전이 아닌 최신 버전이 설치 됩니다. 자동으로 설치되는 것을 원치 않는다면 2가지 방법이 있습니다.
+하나는 lock file을 생성하는 것입니다. 
+그래서 특정 버전만 설치되는 것입니다. 다른 하나는 ^를 제거하는 것입니다.
+yarn은 자동은 yarn.lock 파일을 생성합니다. npm은 nmp shrinkwrap커맨드로 생성 합니다. 차이점이라면 yarn 은 항상 파일을 생성하고, 
+npm은 그렇지 않다는 것입니다. npm-shrinkwrap.jon 이 존재해야 update 됩니다. npm 5버전에서는 lock.json 파일이 새로운 package 이름으로 나옵니다. 
+그리고 완전히 npm-shrinkwrap 시스템을 버립니다. 이는 설치 프로세스와 성능을 올렸지만, 여전히 yarn에는 못 미칩니다.
+
+
+
+npm은 다른 package를 즉시 포함 시킬 수 있는 코드를 자동으로 실행하므로 보안에 취약합니다. 반면에 Yarn은 yarn.lock 또는 package.json에 있는 파일만 설치합니다. 이는 npm 보다 더 안전하다고 여겨집니다.
+Yarn vs npm 실행 명령어
+
+
+결론
+둘 다 이점이 있고 사용자에 필요한 기능들을 가지고 있습니다. yarn 은 효율적이면서도 공간을 많이 차지 합니다. 
+yarn 은 더 최신에 등장 했지만 보안과 안정성을 업데이트 하면서 많은 인기를 끌고 있습니다. npm 역시도 다른 manager들을 따라가기 위해 노력중입니다.
+참고) 최근에 npm 7.0이 배포되었습니다.
