@@ -6,6 +6,7 @@ import Data from './data.js';
 import Detail from './Detail';
 import axios from 'axios';
 import { Link, Route, Switch} from 'react-router-dom';
+import Cart from './Cart.js';
 
 export let countContext = React.createContext();
 
@@ -94,11 +95,14 @@ function App() {
           </countContext.Provider>
         </Route>
 
+        <Route path="/cart">
+          <Cart></Cart>
+        </Route>
+        
         
         <Route path="/:id">
             <div>아무거나</div>
         </Route>
-
       </Switch>      
       
     </div>

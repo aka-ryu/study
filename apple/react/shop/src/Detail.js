@@ -95,10 +95,10 @@ function Detail(props) {
 
       <Nav className="mt-5" variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
-          <Nav.Link eventKey="link-0" onClick={()=>{ onC(false); tabC(0) }}>Active</Nav.Link>
+          <Nav.Link eventKey="link-0" onClick={()=>{ onC(false); tabC(0) }}>상품설명</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1" onClick={()=>{ onC(false); tabC(1) }}>Option 2</Nav.Link>
+          <Nav.Link eventKey="link-1" onClick={()=>{ onC(false); tabC(1) }}>배송정보</Nav.Link>
         </Nav.Item>
       </Nav>
       
