@@ -1,11 +1,16 @@
-.dumbbell {
+body {
+  height: 100vh;
+        background-image: url('img/background.jpg');
+        background-repeat : no-repeat;
+        background-size : cover;
+}
+
+.App {
+
+}
+
+.logo {
   color: white;
+  margin-right: 10px;
 }
 
-.navbar {
-  justify-content: space-between;
-}
-
-.container {
-  margin: 0px;
-}
