@@ -4,8 +4,10 @@ import './App.css';
 import Header from './component/header.js';
 import List from './component/list.js';
 import Content from './component/content.js'
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import Data from './component/data.js';
+
+export const tabContext = React.createContext();
 
 function App() {
 
@@ -16,8 +18,10 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <List tab={tab} setTab={setTab}></List>
-      <Content exercise={exercise}></Content>
+      <tabContext.Provider value={tab}>
+        <List setTab={setTab}></List>
+        <Content exercise={exercise}></Content>
+      </tabContext.Provider>
     </div>
   );
 }
