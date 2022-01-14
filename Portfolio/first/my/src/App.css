@@ -1,16 +1,92 @@
-body {
-  height: 100vh;
-        background-image: url('img/background.jpg');
-        background-repeat : no-repeat;
-        background-size : cover;
-}
-
-.App {
-
-}
-
 .logo {
+  color: black;
+  margin-top: 20px;
+}
+
+
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin-top: 1px;
+}
+
+.main_container {
+  text-align: center;
+}
+
+.list_list {
+  text-align: center;
+  padding: 0px;
+  margin-bottom: 50px;
+}
+
+.list_title {
+  margin-bottom: 0px;
+}
+
+.li_btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.li_btn.active,
+.li_btn:hover {
+  background-color: black;
   color: white;
-  margin-right: 10px;
+  cursor: pointer;
+}
+
+.list_list li {
+  display: inline-block;
+  padding: 0px 5px 0px 5px;
+}
+
+.card {
+  margin: 10px;
+  outline: none;
+}
+
+.card_p {
+  width: 250px;
+  text-align: center;
+  border-bottom: solid 2px black;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px 300px;
+}
+
+.content img {
+  width: 250px;
+}
+
+@media only screen and (max-width: 740px) {
+  .content{
+    padding: 0px 100px;
+  }
+
+}
+
+@media only screen and (max-width: 641px) {
+  .content img {
+    width: 200px
+  }
+
+  .card_p {
+    width: 200px;
+  }
 }
 

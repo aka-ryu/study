@@ -45,7 +45,7 @@ function Cart(props){
 
 function 함수명(state){
     return {
-        state : state.reducer
+        state : state.reducer,
         alertOpen : state.reducer2
     }
 }
