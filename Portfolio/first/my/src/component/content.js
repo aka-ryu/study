@@ -5,6 +5,7 @@ import {tabContext} from "../App.js"
 function Content(props) {
 
     const tab = useContext(tabContext);
+    console.log(tab);
     
 
     if (tab === 'all') {
@@ -14,7 +15,11 @@ function Content(props) {
                     props.exercise.map(function(a,i){
                         return (
                             <div className='card'>
-                                <div className='card_explanation'></div>
+                                <a href={props.exercise[i].namuwiki} target="_blank">
+                                    <div className='card_explanation'>
+                                        <p className='card_explanation_p'>나무위키로 이동 </p>
+                                    </div>
+                                </a>
                                 <img src={'img/' + (props.exercise[i].img) + '.jpg'} className='card_img'></img>
                                 <p className='card_p'>{props.exercise[i].title}</p>
                             </div>
@@ -33,10 +38,13 @@ function Content(props) {
                         if (tab === props.exercise[i].kinds) {
                             return (
                                 <div className='card'>
-                                    <div className='card_explanation'>
-                                        <img src={'img/' + (props.exercise[i].img) + '.jpg'} className='card_img'></img>
-                                        <p className='card_p'>{props.exercise[i].title}</p>
-                                    </div>
+                                    <a href={props.exercise[i].namuwiki} target="_blank">
+                                        <div className='card_explanation'>
+                                            <p className='card_explanation_p'>나무위키로 이동 </p>
+                                        </div>
+                                    </a>
+                                    <img src={'img/' + (props.exercise[i].img) + '.jpg'} className='card_img'></img>
+                                    <p className='card_p'>{props.exercise[i].title}</p>
                                 </div>
                             )
                         }
