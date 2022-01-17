@@ -1,0 +1,73 @@
+body {
+  background-color: black;
+}
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.genre {
+  display: flex;
+  list-style: none;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.genre li {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.nav-search {
+  margin-left: auto;
+  border: 1px solid #666;
+  border-radius: 20px;
+  align-items: center;
+}
+
+
+
+.search {
+  margin-right: 5px;
+  width: 200px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: white;
+}
+
+.nav-search img {
+  padding-bottom: 2px;
+  margin-right: 15px;
+  height: 15px;
+}
+
+.kk {
+  background-image: linear-gradient(to top, rgb(0, 0, 0) 2%, rgba(0, 0, 0, 0) 50%), linear-gradient(to right, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 100%), url("https://img.coupangstreaming.com/titles/18227a79-1a8a-4698-acc9-d2ab0fda6471/hero-largescreen/33fe4db4-a458-4117-93f0-3e764bdfe714.jpeg?imwidth=1200&imheight=300&imscalingMode=aspectFit");
+  background-size: cover;
+  height: 43vw;
+  padding: 200px;
+}
+
+.ll {
+  background-image: linear-gradient(to top, rgb(0, 0, 0) 2%, rgba(0, 0, 0, 0) 50%), linear-gradient(to right, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 100%), url("https://img.coupangstreaming.com/titles/b7c2ae45-e31f-493a-a182-421a97fcfff7/hero-largescreen/764df554-9b81-4531-969d-8f1d43285dc3.jpeg?imwidth=1200&imheight=300&imscalingMode=aspectFit");
+  background-size: cover;
+  height: 43vw;
+  padding: 200px;
+}
+
+.ii {
+  background-image: linear-gradient(to top, rgb(0, 0, 0) 2%, rgba(0, 0, 0, 0) 50%), linear-gradient(to right, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 100%), url("https://img.coupangstreaming.com/titles/dfee2746-afb1-4434-90a3-03ba0c45372a/hero-largescreen/037d22ac-cc0e-447b-b6c6-13a4addc2672.png?imwidth=1200&imheight=300&imscalingMode=aspectFit");
+  background-size: cover;
+  height: 43vw;
+  padding: 200px;
+}
