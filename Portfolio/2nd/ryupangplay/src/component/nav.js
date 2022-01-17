@@ -1,3 +1,5 @@
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 function Nav (){
@@ -18,6 +20,7 @@ function Nav (){
           <input className='search' type="text" placeholder='제목, 배우로 검색해보세요'></input>
           <img src="https://assets.coupangplay.com/images/svg/search.svg"></img>
         </div>
+        <FontAwesomeIcon icon={faBars} className='nav-bars' size='2x'/>
       </div>
     )
 }
