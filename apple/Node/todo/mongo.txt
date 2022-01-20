@@ -1,0 +1,1 @@
+mongodb+srv://uhas2002:<password>@cluster0.0m1w8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
