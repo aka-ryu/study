@@ -165,3 +165,10 @@ function loginOn(req, resp, next){
         resp.send('로그인한 유저만 이용할수있습니다.')
     }
 };
+
+
+app.get('/search', function(req, resp){
+    db.collection('post').find({title: req.query.value}).toArray(function(err, result){
+        resp.render('list.ejs')
+    });
+});

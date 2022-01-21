@@ -35,8 +35,8 @@
     </div>
 
     <div class="container input-group mb-2">
-        <input class="form-control">
-        <button class="input-group-append btn btn-danger">검색</button>
+        <input class="form-control" id="search-input">
+        <button id="search" class="input-group-append btn btn-danger">검색</button>
     </div>
 
 
@@ -69,6 +69,14 @@
 
     </script>
 
+    <script>
+
+        $('#search').click(function(){
+            var inputvalue = $('#search-input').val()
+            window.location.replace('/serach?value='+ inputvalue)
+        });
+
+    </script>
 </body>
 
 </html>
