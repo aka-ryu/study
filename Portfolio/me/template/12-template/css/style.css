@@ -167,10 +167,6 @@ figure section article.on .inner {
 	margin-top: 20px;
 }
 
-.skill-content i {
-	font-siz;
-}
-
 .skill-content img {
 	width: 60px;
 	height: 60px;
@@ -180,5 +176,33 @@ figure section article.on .inner {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-top: 200px;
+	margin-top: 150px;
+}
+
+.personality h1 {
+	font-size: 35px;
+}
+
+.personality p {
+	margin-top: 20px;
+}
+
+.personality h3 {
+	margin-top: 30px;
+}
+
+.portfolio h1 {
+	font-size: 35px;
+}
+
+.modu {
+	margin-top: 30px;
+}
+.modu-img {
+	width: 150px;
+	border: 1px solid black;
+}
+
+.modu-img:hover {
+	transform: scale(3);
 }
