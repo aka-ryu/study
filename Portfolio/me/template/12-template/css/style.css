@@ -4,6 +4,7 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 ul, ol, li {
 	list-style: none;
@@ -21,13 +22,13 @@ figure {
 	background: linear-gradient(25deg, #36D1DC, #5B86E5);
 }
 
-figure h1 {
+figure h1.title {
 	position: absolute;
 	top: 7vh;
 	left: 4vw;
 }
 
-figure h1 strong {
+figure .title strong {
 	font-size: 36px;
 	color: white;
 }
@@ -65,10 +66,6 @@ figure section article .inner {
 	background: white;
 	padding: 5vh 2.5vw 8vh;
 	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-content: space-between;
-	flex-wrap: wrap;
 	border-radius: 10px;
 	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 	opacity: 0.6;
@@ -91,13 +88,11 @@ figure section article.on .inner {
 	display: flex;
 	align-items: center;
 	text-align: left;
-	cursor: pointer;
 }
 
-.btnPrev span {
+.btnPrev i {
 	color: white;
-	transform: translateX(30%);
-	transition: 0.5s;
+	font-size: 50px;
 }
 
 .btnNext {
@@ -110,13 +105,17 @@ figure section article.on .inner {
 	display: flex;
 	align-items: center;
 	text-align: right;
-	cursor: pointer;
 }
 
-.btnNext span {
+.btnNext i {
 	color: white;
-	transform: translateX(-30%);
-	transition: 0.5s;
+	font-size: 50px;
+}
+
+.btnNext i:hover, .btnPrev i:hover {
+	transform: scale(2);
+	transition: all 0.5s;
+	cursor: pointer;
 }
 
 .slide-btn {
@@ -143,4 +142,43 @@ figure section article.on .inner {
 	width: 30px;
 	height: 15px;
 	opacity: 1;
+}
+
+
+.me-img {
+	width: 15vw;
+	height: 30vh;
+	border-radius: 50%;
+	border: 1px solid #36D1DC;
+}
+
+.me-text {
+	margin-top: 30px;
+}
+
+.skill {
+	display: block;
+}
+.skill h1 {
+	font-size: 35px;
+}
+
+.skill-content {
+	margin-top: 20px;
+}
+
+.skill-content i {
+	font-siz;
+}
+
+.skill-content img {
+	width: 60px;
+	height: 60px;
+}
+
+.skill-content-img {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 200px;
 }
