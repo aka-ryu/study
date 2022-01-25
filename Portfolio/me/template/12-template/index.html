@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryu</title>
+    <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/ie.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+
+    <figure>
+        <h1>
+            <strong>Ryu Jae Hyun</strong>
+        </h1>
+        <p>2022 Made by Ryu</p>
+
+        <section>
+            <article class="on">
+                <div class="inner">
+                    1
+                </div>
+            </article>
+
+            <article>
+                <div class="inner">
+                    2
+                </div>
+            </article>
+
+            <article>
+                <div class="inner">
+                    3
+                </div>
+            </article>
+            
+            <article>
+                <div class="inner">
+                    4
+                </div>
+            </article>
+
+            <article>
+                <div class="inner">
+                    5
+                </div>
+            </article>
+
+            <article>
+                <div class="inner">
+                    6
+                </div>
+            </article>
+            
+        </section>
+
+        <div class="btnPrev">
+            <span>PREV</span>
+        </div>
+        <div class="btnNext">
+            <span>Next</span>
+        </div>
+        <div class="slide-btn">
+            <div class="sbtn active"></div>
+            <div class="sbtn"></div>
+            <div class="sbtn"></div>
+            <div class="sbtn"></div>
+            <div class="sbtn"></div>
+            <div class="sbtn"></div>
+        </div>
+    </figure>
+
+    <script>
+        const frame = document.querySelector("section");
+        const lists = document.querySelectorAll("article");
+        const sbtn = document.querySelectorAll(".sbtn");
+        const deg = 60;
+        const len = lists.length -1;
+        let i = 0;
+
+        for (let el of lists) {
+            el.style.transform = `rotate(${deg*i}deg) translateY(-100vh)`;
+            i++;
+        }
+
+        const prev = document.querySelector(".btnPrev");
+        const next = document.querySelector(".btnNext");
+
+        let num = 0;
+        let active = 0;
+
+        function activation(index, lists){
+            for (let el of lists){
+                el.classList.remove("on");
+            }
+            lists[index].classList.add("on");
+        }
+
+        function activesbtn(index, sbtn){
+            for(let el of sbtn) {
+                el.classList.remove("active");
+            }
+            sbtn[index].classList.add("active");
+        }
+
+        prev.addEventListener("click", ()=>{
+            num++;
+            frame.style.transform = `rotate(${deg * num}deg)`;
+            
+            (active == 0) ? active = len : active--;
+            activation(active, lists);
+            activesbtn(active, sbtn);
+        });
+
+        next.addEventListener("click", ()=>{
+            num--;
+            frame.style.transform = `rotate(${deg * num}deg)`;
+
+            (active == len) ? active = 0 : active++;
+            activation(active, lists);
+            activesbtn(active, sbtn);
+        });
+
+        
+    </script>
+</body>
+</html>

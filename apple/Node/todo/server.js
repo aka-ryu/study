@@ -168,7 +168,7 @@ function loginOn(req, resp, next){
 
 
 app.get('/search', function(req, resp){
-    db.collection('post').find({title: req.query.value}).toArray(function(err, result){
-        resp.render('list.ejs')
+    db.collection('post').find( {$text: { $search: req.query.value } } ).toArray(function(err, result){
+        resp.render('search.ejs', {posts : result})
     });
 });
