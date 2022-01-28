@@ -1,0 +1,71 @@
+body {
+    margin: 0px;
+    background: url(../img/back.jpg)
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+
+}
+
+.navbar a:visited{
+    text-decoration: none;
+    color: white;
+}
+.nav-logo {
+    margin-left: 30px;
+}
+
+.nav-logo a {
+    margin: 0px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    margin-left: 30px;
+}
+.nav-user {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.register {
+    margin-right: 10px;
+}
+
+.search {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%) ;
+  
+}
+
+.search-porm {
+    width: 400px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.search-btn {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    right: 4px;
+    bottom: 3px;
+    background-color: #1a4ba8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

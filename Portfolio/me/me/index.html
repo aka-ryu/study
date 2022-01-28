@@ -42,7 +42,7 @@
                 <div class="inner">
                     <div class="skill">
                         <h1>
-                            <strong>Skill</strong>
+                            <strong>Education</strong>
                         </h1>
                         <div class="skill-content">
                             <p>
@@ -50,6 +50,9 @@
                                 백엔드 교육과정 수료 Java, Spring<br>
                                 및 책,인강으로 독학 중
                             </p>
+                            <h1 class="skill-title">
+                                <strong>Skill</strong>
+                            </h1>
                             <div class="skill-content-img">
                                 <img src="img/file_type_html_icon_130541.png">
                                 <img src="img/file_type_css_icon_130661.png">
@@ -118,10 +121,7 @@
                     <div class="portfolio">
                         <h1>portfolio</h1>
                         <div class="modu">
-                            <img class="modu-img" src="/img/health.png">
-                            <div>
-                                <h3>모두의운동</h3>
-                            </div>
+                            <img class="modu-img" src="/img/health.png">            
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
             
         </section>
 
-        <div class="btnPrev">
+        <div class="btnPrev" style="display: none;">
             <i class="fas fa-angle-left"></i>
         </div>
         <div class="btnNext">
@@ -155,7 +155,7 @@
         const frame = document.querySelector("section");
         const lists = document.querySelectorAll("article");
         const sbtn = document.querySelectorAll(".sbtn");
-        const deg = 60;
+        const deg = 40;
         const len = lists.length -1;
         let i = 0;
 
