@@ -76,7 +76,7 @@ export default [
     },
     {
         id: 10,
-        title: "qntksgod",
+        title: "부산행",
         content: "1시간58분 • 15+ • 2016",
         img: "qntksgod",
         genre: "fear",

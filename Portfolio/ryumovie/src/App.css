@@ -15,6 +15,16 @@ header {
   padding: 8px;
 }
 
+.genre a {
+  color: white;
+  text-decoration: none;
+}
+
+.genre a:visited {
+  color: white;
+}
+
+
 .navbar-black {
   background-color: black;
   display: flex;
@@ -40,13 +50,32 @@ header {
   font-weight: bolder;
 }
 
-.nav-search {
+.user {
   margin-left: auto;
+  
+}
+
+.user a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.user a:visited {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.nav-search {
   border: 1px solid #666;
   border-radius: 20px;
   align-items: center;
   background-color: black;
-  height: 24px;
+  height: 30px;
 }
 
 .search {
@@ -139,7 +168,7 @@ header {
   color: white;
 }
 
-.Contents-title {
+.contents-title {
   margin-left: 76px;
   color: white;
   font-size: 18px;
@@ -219,6 +248,12 @@ header {
   font-size: 20px;
   color: black;
   border-radius: 10px;
+}
+
+.list-contents {
+
+  padding-top: 100px;
+
 }
 /* @media screen and (max-width: 850px) {
   .carousel-control-next-icon {

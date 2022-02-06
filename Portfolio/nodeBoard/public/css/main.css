@@ -1,0 +1,39 @@
+.ltable {
+    margin-top: 50px;
+}
+
+.t-h {
+    margin-top: 50px;
+}
+
+.panel-body {
+    margin-top: 50px;
+}
+
+
+
+.btn {
+    margin-top: 10px;
+}
+
+.register-content {
+    height: 500px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.serach-form {
+    width: 300px;
+}
+
+.btn-dark {
+    margin : 0px;
+}
+
+.register-btn {
+    margin: 0px;
+    right: 100px;
+}

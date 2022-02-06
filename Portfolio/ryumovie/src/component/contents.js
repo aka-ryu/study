@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
+import React from 'react';
 
 function Contents(props) {
     
     return (
         <div className='contents'>
-            <p className='Contents-title'>모든 영화들</p>
+            <p className='contents-title'>모든 영화들</p>
             <div className='movie-list'>
             {
                 props.movie.map(function(a,i) {
+                    
                     return(
                         <div>
                             <div className='movie-box'>

@@ -1,8 +1,10 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
-function Nav (){
+
+function Nav (props){
+
 
   const [scroll, setScroll] = useState(0);
   const updateScroll = () => {
@@ -20,21 +22,32 @@ function Nav (){
             <img src="https://assets.coupangplay.com/images/logo.png" className='logo'></img>
           </a>
           <ul className='genre'>
-            <li>액션</li>
-            <li>멜로</li>
-            <li>공포</li>
-            <li>코미디</li>
-            <li>SF 판타지</li>
-            <li>한국</li>
+            <a href="/list/action" onClick={() => props.setgenre("action")}>
+              <li  >액션</li>
+            </a>
+            <a href="/list/mellow" onClick={() => props.setgenre('romance')}>
+              <li>멜로</li>
+            </a>
+            <a href="/list/horror" onClick={() => props.setgenre('fear')}>
+              <li>공포</li>
+            </a>
+            <a href="/list/comedy" onClick={() => props.setgenre('comedy')}>
+              <li>코미디</li>
+            </a>
+            <a href="/list/sf" onClick={() => props.setgenre('sf')}>
+              <li>SF 판타지</li>
+            </a>
           </ul>
-          <div className='nav-search'>
-            <input className='search' type="text" placeholder='제목으로 검색해보세요'></input>
-            <img src="https://assets.coupangplay.com/images/svg/search.svg"></img>
+          <div className='user'>
+            <a href="/login">로그인</a>
+            <a href="/register">회원가입</a>
           </div>
-          <FontAwesomeIcon icon={faBars} className='nav-bars' size='2x'/>
         </div>
+        
       </header>
+      
     )
+    
 }
 
 export default Nav;
