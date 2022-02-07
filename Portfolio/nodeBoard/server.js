@@ -25,10 +25,38 @@ MongoClient.connect(process.env.DB_URL, function(err, client){
 
 app.get('/', function(req, resp){
 
-    
+    // const page = Number(req.query.pageNum) || 1;
+    // const skipSize = (4-1) * 10;
+    // const limitSize = 10;
+    // const pageNum = 1;
 
-    db.collection('board').find().toArray((function(err, result){
-    resp.render('list.ejs', {board : result});
+    // db.collection('board').find().sort({_id : -1}).skip(skipSize).limit(limitSize).toArray((function(err, result){
+    // resp.render('list.ejs', {board : result});
+    // }));
+    resp.send("<script type='text/javascript'>  window.location='/list/1'; </script>");
+});
+
+app.get('/list/:id', async function(req, resp){
+
+    const page = parseInt(req.params.id) || 1;
+    const pagenation = (Math.floor(((page*10)-10)/100) );
+    const skipSize = (page-1) * 3;
+    const limitSize = 3;
+    const maxPage = Math.ceil(await db.collection('board').count() / 3);
+    const startPage = maxPage - 9;
+    const pageSize = 10;
+   
+
+    db.collection('board').find().sort({_id : -1}).skip(skipSize).limit(limitSize).toArray((function(err, result){
+    resp.render('list.ejs', 
+                {
+                    board : result,
+                    page : page,
+                    maxPage : maxPage,
+                    pageSize : pageSize,
+                    startPage : startPage,
+                    pagenation : pagenation
+                });
     }));
 });
 

@@ -25,9 +25,7 @@ a {
     color: black;
 }
 
-.serach-form {
-    width: 300px;
-}
+
 
 .btn-dark {
     margin : 0px;
@@ -35,5 +33,22 @@ a {
 
 .register-btn {
     margin: 0px;
-    right: 100px;
+    
+}
+
+.a-on {
+    background-color: blue ;
+    color : white
+}
+
+.s-n {
+    display: inline-block;
+    margin-left: auto;
+}
+
+#search-input {
+    
+    margin: 0px;
+    padding: 0px;
+    
 }
