@@ -16,32 +16,29 @@
 <body>
 
     <div class="container">
-        <h1 class="t-h">New Register</h1>
+        <h1 class="t-h">Join</h1>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">                    
                     <div class="panel-body">
-                        <form role="form" action="/add" method="post" id="register">
+                        <form role="form" action="/join" method="post" id="register">
                             
                             <div class="form-group">
-                                <label>제목</label> <input class="form-control" name='title' required>
+                                <label>아이디</label> <input class="form-control" name='id' required>
                             </div>
                             
-                            <div class="form-group">
-                                <label>내용</label>
-                                <input class="form-control register-content" rows="10" name='content' required></input>
-                            </div>
+    
         
                             <div class="form-group">
-                                <label>작성자</label> <input class="form-control" value='<%= user.id %>' name='writer' readonly>
+                                <label>비밀번호</label> <input class="form-control"  type="password" name='pw'>
                             </div>
     
                             
                         </form>
 
                         <div class="btn-div">
-                            <button type="submit" class="btn btn-primary register-btn" form="register" >글 등록</button>
-                            <button class="btn btn-success register-btn" onclick="location.href='/'">목록으로</button>
+                            <button type="submit" class="btn btn-primary register-btn" form="register" >회원가입</button>
+                            <button class="btn btn-success register-btn" onclick="location.href='/'">홈으로</button>
                         </div>
                     </div>
                 
