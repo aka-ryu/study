@@ -1,0 +1,54 @@
+.ltable {
+    margin-top: 50px;
+}
+
+.t-h {
+    margin-top: 50px;
+}
+
+.panel-body {
+    margin-top: 50px;
+}
+
+
+
+.btn {
+    margin-top: 10px;
+}
+
+.register-content {
+    height: 500px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.btn-dark {
+    margin : 0px;
+}
+
+.register-btn {
+    margin: 0px;
+    
+}
+
+.a-on {
+    background-color: blue ;
+    color : white
+}
+
+.s-n {
+    display: inline-block;
+    margin-left: auto;
+}
+
+#search-input {
+    
+    margin: 0px;
+    padding: 0px;
+    
+}
