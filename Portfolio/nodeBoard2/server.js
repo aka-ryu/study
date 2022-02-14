@@ -13,6 +13,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
+
 app.use(session({secret : 'key', resave : true, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session()); 
@@ -52,7 +53,7 @@ app.get('/list/:id', async function(req, resp){
     const startPage = maxPage - 9;
     const pageSize = 10;
     const user = req.user || "비회원";
-   
+
 
 
     db.collection('board').find().sort({_id : -1}).skip(skipSize).limit(limitSize).toArray((function(err, result){
@@ -216,3 +217,5 @@ app.post('/join', function(req,resp){
     });
     
 });
+
+app.use('/', require('./routes/shop'));
