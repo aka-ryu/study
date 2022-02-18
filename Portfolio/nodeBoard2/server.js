@@ -12,6 +12,9 @@ app.use(methodOverride('_method'));
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
+const http = require('http').createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(http);
 
 
 app.use(session({secret : 'key', resave : true, saveUninitialized: false}));
@@ -25,7 +28,7 @@ MongoClient.connect(process.env.DB_URL, function(err, client){
 
     db = client.db('todoapp');
 
-    app.listen(process.env.PORT, function(){
+    http.listen(process.env.PORT, function(){
         console.log('listening on 8080')
     });
 });
@@ -219,3 +222,27 @@ app.post('/join', function(req,resp){
 });
 
 app.use('/', require('./routes/shop'));
+
+app.get('/socket', function(req, resp){
+    resp.render('socket.ejs');
+});
+
+io.on('connection', function(socket){
+    console.log('접속성공')
+
+
+    socket.on('user-send', function(data){
+        io.emit('broadcast', data)
+    });
+    // 1:1 통신은 io.to(socket.id).emit 으로 id 에 맞는 유저에게만 전송  (귓속말기능등)
+
+    socket.on('room1-join', function(){
+        socket.join('room1');
+        console.log('room1 입장 완료')
+    })
+
+    socket.on('room1-send', function(data){
+        io.to('room1').emit('broadcast', data)
+        console.log(data)
+    })
+}); 
